@@ -1,18 +1,18 @@
-## ³»¿ë
+## ë‚´ìš©
 
-ISSUEÀÇ ³»¿ëÀ» Àû¾îÁÖ¼¼¿ä.
+ISSUEì˜ ë‚´ìš©ì„ ì ì–´ì£¼ì„¸ìš”.
 
-## PR ºÐ·ù¸¦ ¼±ÅÃÇÏ¼¼¿ä
+## ISSUE ë¶„ë¥˜ë¥¼ ì„ íƒí•˜ì„¸ìš”
 
-- [ ] New Feature
-- [ ] Bug Fix
-- [ ] Refact
+- [ ] Add
+- [ ] Fix
+- [ ] Doc
 - [ ] Style
-- [ ] HotFix
-- [ ] Pair Programming
+- [ ] Refactor
+- [ ] Test
 
-## ÀÛ¾÷ ³»¿ë
+## ìž‘ì—… ë‚´ìš©
 
 - [ ] Todo 1
 
-## Âü°í »çÇ×
+## ì°¸ê³  ì‚¬í•­
