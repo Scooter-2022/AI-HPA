@@ -1,0 +1,27 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: view-metrics-aihpa
+rules:
+- apiGroups:
+    - metrics.k8s.io
+  resources:
+    - pods
+    - nodes
+  verbs:
+    - get
+    - list
+    - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: view-metrics-aihpa
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view-metrics-aihpa
+subjects:
+- kind: ServiceAccount
+  name: default        # 테스트 해본 것은 아니지만, 해당 ServiceAccount 이름으로만 접근 가능할 것으로 보임
+  namespace: default   # 해당 네임스페이스에서 생성된 파드 안에서만 접근 가능 
