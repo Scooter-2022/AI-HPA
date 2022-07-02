@@ -17,7 +17,7 @@ kind: Deployment
 metadata:
   name: test-nginx-deployment
 spec:
-  replicas: 2 
+  replicas: 1
   selector:
     matchLabels:
       app: test-nginx
@@ -27,6 +27,11 @@ spec:
         app: test-nginx
     spec:
       containers:
+      - name: multi-test
+        image: ubuntu:20.04 
+        args:
+        - sleep
+        - "10000000"
       - name: container-name
         imagePullPolicy: Always
         image: nginx:1.14
@@ -37,17 +42,4 @@ spec:
             cpu: 500m
           requests:
             cpu: 200m
-        volumeMounts:
-          - name: podinfo
-            mountPath: /etc/podinfo
-      volumes:
-        - name: podinfo
-          downwardAPI:
-            items:
-              - path: "labels"
-                fieldRef:
-                  fieldPath: metadata.labels
-              - path: "annotations"
-                fieldRef:
-                  fieldPath: metadata.annotations
       restartPolicy: Always
