@@ -16,3 +16,4 @@ kubectl apply -f prometheus-svc.yaml
 kubectl apply -f grafana.yaml
 ```
 
+port : 30002
