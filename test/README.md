@@ -10,6 +10,15 @@ kubectl apply -f prometheus-node-exporter.yaml
 kubectl apply -f prometheus-svc.yaml
 ```
 
+### kube-state-metrics
+
+```bash
+kubectl apply -f kube-state-cluster-role.yaml
+kubectl apply -f kube-state-deployment.yaml
+kubectl apply -f kube-state-svcaccount.yaml
+kubectl apply -f kube-state-svc.yaml
+```
+
 ### Grafana (:30002)
 
 ```bash
