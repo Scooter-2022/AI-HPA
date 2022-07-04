@@ -23,5 +23,5 @@ roleRef:
   name: view-metrics-aihpa
 subjects:
 - kind: ServiceAccount
-  name: default        # 테스트 해본 것은 아니지만, 해당 ServiceAccount 이름으로만 접근 가능할 것으로 보임
-  namespace: default   # 해당 네임스페이스에서 생성된 파드 안에서만 접근 가능 
+  name: default        
+  namespace: default   
