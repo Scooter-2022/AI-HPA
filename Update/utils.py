@@ -2,7 +2,7 @@ import requests
 import json
 import os
 
-APISERVER = "https://kubernetes.default.svc"
+APISERVER = "https://" + os.environ['KUBERNETES_SERVICE_HOST'] + ":" + os.environ['KUBERNETES_SERVICE_PORT_HTTPS']
 SVCACC = "/var/run/secrets/kubernetes.io/serviceaccount"
 NS = open(SVCACC + "/namespace").readline()
 TOKEN = open(SVCACC + "/token").readline()
