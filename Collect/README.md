@@ -5,7 +5,7 @@ kubectl apply -f metrics-server.yaml
 
 ## RBAC 설정 (기본 namespace : default)
 ```bash
-kubectl apply -f rbac.yaml
+kubectl apply -f rbac-metrics.yaml
 ```
 
 ## 파드에 접속하기 (bash shell)
