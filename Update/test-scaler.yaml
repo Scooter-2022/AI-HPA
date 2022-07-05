@@ -4,6 +4,9 @@ metadata:
   name: scaler
 spec:
   containers:
-  - image: scooter2022/tmp:1.1
+  - image: scooter2022/scaler:1.0
     imagePullPolicy: Always
     name: scaler
+    env:
+    - name: SCALE_TARGET
+      value: test-nginx-deployment
