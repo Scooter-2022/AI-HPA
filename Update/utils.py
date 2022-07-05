@@ -28,3 +28,15 @@ def get_metric(scale_target):
                     cur_usage = cur_usage[:-1]
                 total_cpu_usage += int(cur_usage)
     return total_cpu_usage
+
+def insert_usage(usage_data, usage):
+    for i in range(len(usage_data) - 1):
+        usage_data[i+1] = usage_data[i]
+    usage_data[0] = usage
+    return
+
+def predict_replica(usage_data, curr_pods):
+    URL = "http://localhost:4000/predict"
+    data = {'usage_data':usage_data, 'curr_pods': curr_pods}
+    requests.post(url, json=data)
+    return

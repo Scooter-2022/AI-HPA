@@ -1,20 +1,21 @@
 import time
 import os
-from utils import scale, get_metric
+from utils import *
 
 SCALE_TARGET = os.environ['SCALE_TARGET']
 
+usage_data = [0 for _ in range(30)]
 while True:
     print(time.ctime(), end=" : ")
     
     total_cpu_usage = get_metric(SCALE_TARGET)
     print(total_cpu_usage, end=", scaled to ")
     
-    # 모델에 데이터를 보내 replicas 를 받아옴, 현재는 더미값
-    # replicas = predict_replica()
-    replicas = int(time.ctime().split(':')[-1][0]) % 3 + 1
-
-    scale(SCALE_TARGET, replicas)
+    # curr_pods 는 현재 더미값
+    insert_usage(usage_data, total_cpu_usage)
+    replicas = predict_replica(usage_data, 1)
     print(replicas)
 
+    scale(SCALE_TARGET, replicas)
+    
     time.sleep(10)
