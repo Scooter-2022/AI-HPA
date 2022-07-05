@@ -6,8 +6,7 @@ from model import predict
 app = FastAPI()
 
 class Item(BaseModel):
-    usage_data: int
-    #usage_data: List[int] = []
+    usage_data: List[int] = []
     curr_pods: int
 
 @app.post("/predict")
