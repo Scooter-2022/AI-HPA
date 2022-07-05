@@ -13,4 +13,7 @@ class Item(BaseModel):
 async def inference(values: Item):
     values = values.dict()
 
-    return type(values), values.keys(), values, predict([], 1)
+    usage_data = values['usage_data']
+    curr_pods = values['curr_pods']
+    
+    return predict(usage_data, curr_pods)
