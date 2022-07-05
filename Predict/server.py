@@ -12,6 +12,8 @@ class Item(BaseModel):
 @app.post("/predict")
 async def inference(values: Item):
     values = values.dict()
+    print(type(values))
+    print(values)
 
     usage_data = values['usage_data']
     curr_pods = values['curr_pods']
