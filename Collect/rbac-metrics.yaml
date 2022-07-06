@@ -1,0 +1,27 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: view-metrics-aihpa
+rules:
+- apiGroups:
+    - metrics.k8s.io
+  resources:
+    - pods
+    - nodes
+  verbs:
+    - get
+    - list
+    - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: view-metrics-aihpa
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view-metrics-aihpa
+subjects:
+- kind: ServiceAccount
+  name: default        
+  namespace: default   
