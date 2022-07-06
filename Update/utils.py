@@ -26,6 +26,10 @@ def get_metric(scale_target):
                 cur_usage = pod['containers'][0]['usage']['cpu']
                 if cur_usage[-1] == 'n':
                     cur_usage = cur_usage[:-1]
+                elif cur_usage[-1] == 'u':
+                    cur_usage = cur_usage[:-1] + "000"
+                elif cur_usage[-1] == 'm':
+                    cur_usage = cur_usage[:-1] + "000000"
                 total_cpu_usage += int(cur_usage)
     return total_cpu_usage
 
