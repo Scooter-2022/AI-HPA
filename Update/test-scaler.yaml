@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ai-hpa
+spec:
+  containers:
+  # model module
+  - image: scooter2022/model:1.0
+    name: model
+    imagePullPolicy: Always
+  # scaler module
+  - image: scooter2022/scaler:1.0
+    name: scaler
+    imagePullPolicy: Always
+    env:
+    - name: SCALE_TARGET
+      value: test-nginx-deployment
