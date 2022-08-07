@@ -3,6 +3,7 @@ import os
 from utils import *
 
 SCALE_TARGET = os.environ['SCALE_TARGET']
+TIME_INTERVAL = os.environ.get('TIME_INTERVAL', 10)
 
 usage_data = [0 for _ in range(30)]
 while True:
@@ -18,4 +19,4 @@ while True:
 
     scale(SCALE_TARGET, replicas)
     
-    time.sleep(10)
+    time.sleep(int(TIME_INTERVAL))
