@@ -39,9 +39,9 @@ def insert_usage(usage_data, usage):
     usage_data[0] = usage
     return
 
-def predict_replica(usage_data, curr_pods):
+def predict_replica(usage_data):
     URL = "http://localhost:4000/predict"
-    data = {'usage_data':usage_data, 'curr_pods': curr_pods}
+    data = {'usage_data':usage_data}
     response = requests.post(URL, json=data)
     replicas = int(response.text)
     return replicas
