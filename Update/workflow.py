@@ -12,7 +12,6 @@ while True:
     total_cpu_usage = get_metric(SCALE_TARGET)
     print(total_cpu_usage, end=", scaled to ")
     
-    # curr_pods 는 현재 더미값
     insert_usage(usage_data, total_cpu_usage)
     replicas = predict_replica(usage_data, 1)
     print(replicas)

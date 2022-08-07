@@ -5,7 +5,7 @@ from tensorflow.keras.models import load_model
 import numpy as np
 
 # fastapi 에서 호출하는 함수
-def predict(usage_data, curr_pods):
+def predict(usage_data):
     
     # 임의로 설정한 inference 시간
     time.sleep(3)
