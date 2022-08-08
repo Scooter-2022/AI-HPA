@@ -5,16 +5,21 @@ from utils import *
 SCALE_TARGET = os.environ['SCALE_TARGET']
 TIME_INTERVAL = os.environ.get('TIME_INTERVAL', 10)
 
-usage_data = [0 for _ in range(30)]
+usage_data = [1 for _ in range(10)]
+
 while True:
     print(time.ctime(), end=" : ")
     
     total_cpu_usage = get_metric(SCALE_TARGET)
     print(total_cpu_usage, end=", scaled to ")
     
+    pod_num = cpu_to_pod(total_cpu_usage)
+    print(pod_num)
+
     insert_usage(usage_data, total_cpu_usage)
     replicas = predict_replica(usage_data, 1)
-    print(replicas)
+    print(str(usage_data))
+    print("Model predicts replicas : "+str(replicas))
 
     scale(SCALE_TARGET, replicas)
     
