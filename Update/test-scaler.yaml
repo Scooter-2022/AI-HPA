@@ -9,9 +9,14 @@ spec:
     name: model
     imagePullPolicy: Always
   # scaler module
-  - image: scooter2022/scaler:1.0
+  - image: scooter2022/scaler:1.3
     name: scaler
     imagePullPolicy: Always
     env:
     - name: SCALE_TARGET
       value: test-nginx-deployment
+  # metrics-server Running check in advance
+  initContainers:
+  - name: init-metrics-server
+    image: busybox:1.28
+    command: ['sh', '-c', "until nslookup metrics-server; do echo waiting for metrics-server; sleep 2; done;"]
