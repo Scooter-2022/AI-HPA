@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   # model module
-  - image: scooter2022/model:1.0
+  - image: scooter2022/model:1.1
     name: model
     imagePullPolicy: Always
   # scaler module
