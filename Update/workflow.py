@@ -17,7 +17,7 @@ while True:
     print(pod_num)
 
     insert_usage(usage_data, pod_num)
-    replicas = predict_replica(usage_data, 1)
+    replicas = predict_replica(usage_data)
     print(str(usage_data))
     print("Model predicts replicas : "+str(replicas))
 
