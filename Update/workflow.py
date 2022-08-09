@@ -16,7 +16,7 @@ while True:
     pod_num = cpu_to_pod(total_cpu_usage)
     print(pod_num)
 
-    insert_usage(usage_data, total_cpu_usage)
+    insert_usage(usage_data, pod_num)
     replicas = predict_replica(usage_data, 1)
     print(str(usage_data))
     print("Model predicts replicas : "+str(replicas))

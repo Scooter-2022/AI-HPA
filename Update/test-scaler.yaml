@@ -19,4 +19,4 @@ spec:
   initContainers:
   - name: init-metrics-server
     image: busybox:1.28
-    command: ['sh', '-c', "until nslookup metrics-server; do echo waiting for metrics-server; sleep 2; done;"]
+    command: ['sh', '-c', "until nslookup metrics-server.kube-system.svc.cluster.local; do echo waiting for metrics-server; sleep 2; done;"]
