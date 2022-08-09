@@ -14,4 +14,6 @@ async def inference(values: Item):
 
     usage_data = values['usage_data']
     
-    return predict(usage_data)
+    ret = predict(usage_data)
+    print(f"Usage: {usage_data}\t--->\tPredicted: {ret}")
+    return ret

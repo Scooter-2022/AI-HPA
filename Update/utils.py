@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+import math
 
 APISERVER = "https://" + os.environ['KUBERNETES_SERVICE_HOST'] + ":" + os.environ['KUBERNETES_SERVICE_PORT_HTTPS']
 SVCACC = "/var/run/secrets/kubernetes.io/serviceaccount"
@@ -33,10 +34,16 @@ def get_metric(scale_target):
                 total_cpu_usage += int(cur_usage)
     return total_cpu_usage
 
+def cpu_to_pod(total_cpu_usage):
+    user_cpu_limit=os.environ.get('CONTAINER_CPU_LIMIT_MILLICORES', 250000000)
+    cpu_limit_rate=int(user_cpu_limit)*0.8                                   
+    pod_num = math.ceil(total_cpu_usage/cpu_limit_rate)                                                              
+    return pod_num                             
+
 def insert_usage(usage_data, usage):
     for i in range(len(usage_data) - 1):
-        usage_data[i+1] = usage_data[i]
-    usage_data[0] = usage
+        usage_data[i] = usage_data[i+1]
+    usage_data[9] = usage
     return
 
 def predict_replica(usage_data):
