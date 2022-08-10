@@ -8,6 +8,22 @@
 [김지혜](https://github.com/asd3638)
 [유지연](https://github.com/hellouz818)
 
+<br>
+
+---
+
+## 프로젝트 주제: AI-HPA
+
+<p align="center">
+
+<h3>딥러닝 기반 모델 성능 비교를 통해 최적의 예측 모델 선정</h3>
+<h3>사용자가 predictive scaling을 원하는 특정 서비스에만 적용 가능</h3>
+<h3>Kubernetes의 standard pod의 형태로 실행 가능하게 제공</h3>
+
+</p>
+
+<br>
+
 ---
 
 ## 프로젝트 선정 배경
@@ -30,26 +46,7 @@ Reactive 방식으로 특정 주기마다 metrics server로부터 자원 사용�
 
 <br>
 
-<p align="center">
-
-<h4>대기시간을 없애면서 예측 정확도를 높을 수 있는</h4>
-<h4>새로운 Autoscaler의 도입 필요</h4>
-
-</p>
-
-<br>
-
----
-
-## 프로젝트 주제: AI-HPA
-
-<p align="center">
-
-<h3>딥러닝 기반 모델 성능 비교를 통해 최적의 예측 모델 선정</h3>
-<h3>사용자가 predictive scaling을 원하는 특정 서비스에만 적용 가능</h3>
-<h3>Kubernetes의 standard pod의 형태로 실행 가능하게 제공</h3>
-
-</p>
+### => 대기시간을 없애면서 예측 정확도를 높을 수 있는 새로운 Autoscaler의 도입 필요
 
 <br>
 
@@ -68,6 +65,8 @@ Reactive 방식으로 특정 주기마다 metrics server로부터 자원 사용�
 |Collect|Update|Predict|
 |------|------|------|
 |애플리케이션 메트릭을 수집하여 중앙 집중식 시계열 데이터베이스로 보내 수집된 메트릭을 활용하고 분석 단계에서 사용|Collector에서 특정 구간의 데이터를 쿼리하여 학습시킨 모델에 적용. 예측된 다음 시점의 워크로드에 대하여 설정한 알고리즘을 바탕으로 다음 시점의 파드 수 예측|Kubernetes 엔진(kube-apiserver)은 예측 단계로부터 명령을 받아 Pod의 복제본 수를 변경|
+
+<br>
 
 ### 아키텍처 구현
 
@@ -124,21 +123,16 @@ Kubernetes 엔진(kube-apiserver)은 Automatic Scaler의 명령을 통해 적절
 <br>
 
 #### 이미지
-{{ 이미지 첨부 }}
+
+<img width="1303" alt="compare-hpa-ai-hpa" src="https://user-images.githubusercontent.com/68985625/183820991-7e80e101-617a-442c-af2a-1831749e1a73.png">
 
 <br>
 
 ---
 
 ## 시연
-{{ 시연 영상 첨부 }}
+
+https://user-images.githubusercontent.com/68985625/183821998-4d7a5194-cf08-4984-9dd0-bff6fed9972f.mp4
 
 <br>
-
----
-
-## CI/CD 파이프라인
-개발 과정 자동화
-
-<img width="1303" alt="CICD-pipe" src="https://user-images.githubusercontent.com/68985625/183816728-67ea57ff-3f70-40ab-851b-370de940dff1.png">
 
