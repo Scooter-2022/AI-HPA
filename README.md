@@ -46,7 +46,7 @@ Reactive 방식으로 특정 주기마다 metrics server로부터 자원 사용�
 
 <br>
 
-### => 대기시간을 없애면서 예측 정확도를 높을 수 있는 새로운 Autoscaler의 도입 필요
+### => 대기시간을 없애면서 예측 정확도를 높일 수 있는 새로운 Autoscaler의 도입 필요
 
 <br>
 
@@ -117,7 +117,7 @@ Kubernetes 엔진(kube-apiserver)은 Automatic Scaler의 명령을 통해 적절
 
 ### 차별성 검증
 #### HPA, PHPA 와의 차별성 검증
-학습된 모델, Kubernetes에서 제공하는 기본 Autoscaler HPA, 오픈소스 Predictice HPA, 총 세 가지 모델에 랜덤으로 발생시킨 트래픽으로 성능 비교
+학습된 모델, Kubernetes에서 제공하는 기본 Autoscaler HPA, 오픈소스 Predictice HPA, 총 세 가지 모델에 테스트 트래픽 데이터셋의 일부로 성능 비교
 예측 정확도를 바탕으로 개발한 모델의 스케일링 효과를 검증
 
 <br>
