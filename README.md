@@ -1,5 +1,5 @@
 # 딥러닝 기반 Kubernetes Autoscaler 성능 개선 프로젝트
-## OIDC 2022(Open Infra Development Competition) 최우수상 수상작([링크](https://www.oidc.co.kr/last))
+## OIDC 2022(Open Infra Development Competition) 금상 수상작([링크](https://www.oidc.co.kr/f40abc81-5c23-4148-8f7b-1ef385e585d2))
 ---
 ## 팀명: 스쿠터
 
